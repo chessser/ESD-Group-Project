@@ -29,24 +29,24 @@ public class UserServletListener implements ServletContextListener {
         ServletContext sc = sce.getServletContext();
         String db = sc.getInitParameter("dbname");
         
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+db.trim(), "root", "");
-//        }
-//        catch(ClassNotFoundException | SQLException e){
-//            sc.setAttribute("error", e);
-//        }
-//        sc.setAttribute("connection", conn);
-//    }
-//
-//    @Override
-//    public void contextDestroyed(ServletContextEvent sce) {
-//        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//        try { conn.close(); } catch(SQLException e) {}
-   }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+db.trim(), "root", "");
+        }
+        catch(ClassNotFoundException | SQLException e){
+            sc.setAttribute("error", e);
+        }
+        sc.setAttribute("connection", conn);
+    }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try { conn.close(); } catch(SQLException e) {}
+   }
+
+//    @Override
+//    public void contextDestroyed(ServletContextEvent sce) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 }

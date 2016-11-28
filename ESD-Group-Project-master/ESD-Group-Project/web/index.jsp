@@ -12,16 +12,29 @@
         <title>JSP Page</title>
     </head>
     <body>
+    <center>
         <h1>Homepage</h1>
+    </center>
         <form action="First" method="post">
+            <center>
             <p />
-            Select an action <br />
-            <input type="radio" name="tbl" value="Login">Login<br />
-            <input type="radio" name="tbl" value="LoginAdmin">Login as Admin<br />
-            <input type="radio" name="tbl" value="Register">Register<br />
             
-            <input type=submit value="Action"> <br />
+            User Sign in <br />
+            Username: <input type="text" name="username"><br />
+            Password: <input type="text" name="password" ><br />
+            <input type ="checkbox" name = "admin"> Sign in as Admin <br />
+             <input type=submit value="Enter"> <br />
             
+            <br />
+            <br />
+            
+            Register as new user <br />
+            Name   : <input type="text" name="name" ><br />
+            DOB    : <input type="date" name="dob" ><br />
+            Address: <input type="text" name="address" ><br />
+            
+            <input type=submit value="Register"> <br />
+            </center>
         </form>
         
        
